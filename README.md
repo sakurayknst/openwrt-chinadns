@@ -4,7 +4,7 @@ ChinaDNS for OpenWrt
 简介
 ---
 
- 本项目是基于原作[openwrt-chinadns][1] 在 OpenWrt 上的移植  
+ 本项目是基于原作[openwrt-chinadns][1] 进行一些个人喜好修改
  会偶尔和原作同步一下！ 
 
 编译
