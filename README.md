@@ -4,9 +4,8 @@ ChinaDNS for OpenWrt
 简介
 ---
 
- 本项目是 [ChinaDNS][1] 在 OpenWrt 上的移植  
- 当前版本: 1.3.2-3  
- [预编译 IPK 下载][2]  
+ 本项目是基于原作[openwrt-chinadns][1] 在 OpenWrt 上的移植  
+ 会偶尔和原作同步一下！ 
 
 编译
 ---
@@ -28,13 +27,11 @@ ChinaDNS for OpenWrt
 配置
 ---
 
- - 默认 DNS 服务器端口为 `5353`, 可使用 [LuCI][L] 进行配置  
+ - 默认 DNS 服务器端口为 `5353`, 可使用 [LuCI][L] 进行配置
 
- - 可搭配路由器自带的 Dnsmasq 使用 借助其 DNS 缓存提升查询速度  
+ - 配置完毕后会自动写入Dnsmasq的临时配置文件，使dnsmasq自动应用本应用程式作为上游DNS，并且忽略解析文件
 
-   >LuCI 中定位至「网络 - DHCP/DNS」  
-   >「基本设置」 **本地服务器** 填写 `127.0.0.1#5353`  
-   >「HOSTS和解析文件」勾选 **忽略解析文件**  
+ - 启用，禁用等操作会将Dnsmasq**连带重启**，介意者勿用！！  
 
  - [/etc/chinadns_chnroute.txt][3] 可以使用下面命令更新
    ```bash
@@ -52,7 +49,7 @@ ChinaDNS for OpenWrt
  [openwrt-redsocks2][R]   | RedSocks2 for OpenWrt
 
 
-  [1]: https://github.com/clowwindy/ChinaDNS
+  [1]: https://github.com/aa65535/openwrt-chinadns
   [2]: https://sourceforge.net/projects/openwrt-dist/files/chinadns/
   [3]: https://github.com/clowwindy/ChinaDNS/blob/master/chnroute.txt
   [5]: https://github.com/aa65535/openwrt-shadowvpn
