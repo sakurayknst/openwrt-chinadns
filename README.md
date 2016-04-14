@@ -17,7 +17,7 @@ ChinaDNS for OpenWrt
    tar xjf OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
    cd OpenWrt-SDK-ar71xx-*
    # 获取 Makefile
-   git clone https://github.com/aa65535/openwrt-chinadns.git package/chinadns
+   git clone https://github.com/Sakura-Winkey/openwrt-chinadns.git package/chinadns
    # 选择要编译的包 Network -> ChinaDNS
    make menuconfig
    # 开始编译
@@ -37,6 +37,11 @@ ChinaDNS for OpenWrt
    ```bash
     wget -O- 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > /etc/chinadns_chnroute.txt
    ```
+
+修改
+---
+
+ - 修改init脚本以及默认的config，以支持LuCI中动态添加框（取代原版本中以英标逗号分隔的上游dns列表）
 
 ----------
 
